@@ -3,7 +3,7 @@ package com.example.ui_project;
 //사용자 계정 정보 객체
 public class UserAccount {
 
-    private String idToken;
+    private String idToken; //Firebase Uid(고유 키값)
     private String emailId;
     private String password;
 
