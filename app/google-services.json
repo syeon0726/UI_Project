@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "373520231900",
+    "firebase_url": "https://ui-project-2f06b-default-rtdb.firebaseio.com",
     "project_id": "ui-project-2f06b",
     "storage_bucket": "ui-project-2f06b.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "373520231900-sklgj1lr05ln90prcomap6h601c137t7.apps.googleusercontent.com",
+          "client_type": 3,
+          "android_info": {
+            "package_name": "com.example.ui_project",
+            "certificate_hash": "b90ab3cd5efbe6d059d54068e83adf6971b92737"
+          }
+        },
         {
           "client_id": "373520231900-78a86f7v8gl8cmdnu74ifkimnp2iubhh.apps.googleusercontent.com",
           "client_type": 3
