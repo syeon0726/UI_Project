@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity{
 
         //구글 로그인 인증 준비
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id)) //무시해도 돌아감
                 .requestEmail()
                 .build();
 
@@ -142,12 +142,14 @@ public class LoginActivity extends AppCompatActivity{
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                            /*유저 정보 얻기
+                            //유저 정보 얻기
                             UserAccount account = new UserAccount();
                             account.setIdToken(firebaseUser.getUid());
                             account.setEmailId(firebaseUser.getEmail());
                             CollectionReference collectionReference=databaseReference.collection("UserAccount");
                             Query query=collectionReference.whereEqualTo("UserId", account.getIdToken());
+
+                            //새로운 유저인지 쿼리문으로 체크후 유저정보 db에 저장하기
                             if(query == null){
                                 //유저 정보 객체 생성
                                 Map<String, Object> user = new HashMap<>();
@@ -166,7 +168,7 @@ public class LoginActivity extends AppCompatActivity{
                                             }
                                         });
 
-                            }*/
+                            }
                             //회원가입이 완료됐으면, Login 화면으로 이동
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
