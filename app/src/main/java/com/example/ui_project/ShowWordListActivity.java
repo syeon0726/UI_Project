@@ -49,6 +49,7 @@ public class ShowWordListActivity extends AppCompatActivity {
 
 
         customWordAdapter=new CustomWordAdapter();
+        arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);
 
         textView=findViewById(R.id.textView);
 
@@ -68,11 +69,20 @@ public class ShowWordListActivity extends AppCompatActivity {
 
         //-----------------------------------------------
 
-        Excel(var);
+        Excel1(var);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(button.getText()=="뜻 가리기"){
+                    Excel2(var);
+                    button.setText("뜻 보기");
+                }
+                else{
+                    Excel1(var);
+                    button.setText("뜻 가리기");
+
+                }
 
 
                 
@@ -87,7 +97,7 @@ public class ShowWordListActivity extends AppCompatActivity {
 
 
     }
-    public void Excel(String var) {
+    public void Excel1(String var) {
         Workbook workBook = null;
         Sheet sheet=null;
         try{
@@ -132,6 +142,45 @@ public class ShowWordListActivity extends AppCompatActivity {
         }
         finally {
             listExcel.setAdapter(customWordAdapter);
+            workBook.close();
+        }
+
+
+
+    }
+
+    public void Excel2(String var) {
+        Workbook workBook = null;
+        Sheet sheet=null;
+        try{
+            InputStream is = getBaseContext().getResources().getAssets().open(var+".xls");
+            workBook= Workbook.getWorkbook(is);
+            sheet= workBook.getSheet(0);
+
+            int maxColumn=2,rowStart=0,rowEnd=sheet.getColumn(maxColumn-1).length-1,
+                    columStart=0,columnEnd=sheet.getRow(2).length-1;
+
+            String excelLoad="";
+            for(int row=rowStart+1;row<=rowEnd;row++){
+                String def=sheet.getCell(columStart+1,row).getContents();
+                if(def==""){
+                    continue;
+                }
+                String term=sheet.getCell(columStart,row).getContents();
+
+
+                arrayAdapter.add(term);
+
+            }
+
+
+            } catch (IOException ioException) {
+            ioException.printStackTrace();
+        } catch (BiffException biffException) {
+            biffException.printStackTrace();
+        }
+        finally{
+            listExcel.setAdapter(arrayAdapter);
             workBook.close();
         }
 
