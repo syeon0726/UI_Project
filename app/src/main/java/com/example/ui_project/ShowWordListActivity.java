@@ -100,7 +100,27 @@ public class ShowWordListActivity extends AppCompatActivity {
 
             String excelLoad="";
             for(int row=rowStart+1;row<=rowEnd;row++){
-                customWordAdapter.addItem(new Word(sheet.getCell(columStart,row).getContents(),sheet.getCell(columStart+1,row).getContents()));
+                String def=sheet.getCell(columStart+1,row).getContents();
+                if(def==""){
+                    continue;
+                }
+
+                String[] defList=def.split("\\|");
+                def="";
+                for(int i=0;i<defList.length;i++){
+                    if(i==defList.length-1)
+                        def+=Integer.toString(i+1)+". "+defList[i];
+
+                    else{
+                        def+=Integer.toString(i+1)+". "+defList[i]+"\n";
+                    }
+
+                }
+
+
+
+
+                customWordAdapter.addItem(new Word(sheet.getCell(columStart,row).getContents(),def));
                 //arrayAdapter.add(excelLoad);
                 //wordList.add(new Word(sheet.getCell(columStart,row).getContents(),sheet.getCell(columStart+1,row).getContents()));
 
