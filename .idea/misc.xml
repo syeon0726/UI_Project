@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fuxxk/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_login.xml" value="0.17395833333333333" />
+        <entry key="..\:/Users/fuxxk/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/fuxxk/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_show_word_list.xml" value="0.22" />
+        <entry key="..\:/Users/fuxxk/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_sing_up.xml" value="0.22" />
+        <entry key="..\:/Users/fuxxk/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_word_book.xml" value="0.22" />
+        <entry key="..\:/Users/fuxxk/AndroidStudioProjects/UI_Project/app/src/main/res/layout/custom_word_list.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/sons6/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/sons6/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/sons6/AndroidStudioProjects/UI_Project/app/src/main/res/layout/activity_sing_up.xml" value="0.16" />
@@ -14,5 +20,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>

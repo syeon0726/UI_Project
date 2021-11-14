@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnLogout;
     private FirebaseAuth firebaseAuth;
+    private Button btnWordBook;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnLogout=findViewById(R.id.logout);
         firebaseAuth=FirebaseAuth.getInstance();
+        btnWordBook=findViewById(R.id.word);
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent=new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        btnWordBook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,WordBookActivity.class);
+                startActivity(intent);
+
             }
         });
 
